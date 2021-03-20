@@ -28,6 +28,8 @@ cheungdek <- function(metframe, rmaobj) {
 awf <- function(frame1, dec1=2) {
   overall <- rma.mv(y, v, random = list(~ 1 | effectsizeID, ~ 1 | studyID), 
                     tdist=TRUE, data=frame1)
+  megger <- rma.mv(y, v, mods=~I(sqrt(v)), random = list(~ 1 | effectsizeID, ~ 1 | studyID), 
+                   tdist=TRUE, data=frame1) # modified Egger test, Marengo and Montag
   oeff <- c(overall$b,overall$ci.lb,overall$ci.ub,overall$pval)
   names(oeff) <- c("effect","lower",
                    "upper","p-value")
@@ -42,6 +44,30 @@ awf <- function(frame1, dec1=2) {
   obetween <- update(overall, sigma2=c(NA,0))
   pwithin <- anova(overall,owithin)$pval
   pbetween <- anova(overall,obetween)$pval
+  ohet <- c(overall$QE,overall$dfs,overall$QEp)
+  names(ohet) <- c("Q","df","p")
+  ohetd <- as.character(round(ohet,dec1))
+  names(ohetd) <- names(ohet)
+  ohetd[2] <- as.character(round(ohet[2]))
+  ohetd[3] <- as.character(round(ohet[3],3))
+  if (ohet[3]<.001) ohetd[3] <- "<.001"
+  if (ohet[3]<.001) ohetd[3] <- "<.001"
+  mhet <- c(megger$QE,megger$dfs,megger$QEp)
+  names(mhet) <- c("Q","df","p")
+  mhetd <- as.character(round(mhet,dec1))
+  names(mhetd) <- names(mhet)
+  mhetd[2] <- as.character(round(mhet[2]))
+  mhetd[3] <- as.character(round(mhet[3],3))
+  if (mhet[3]<.001) mhetd[3] <- "<.001"
+  megger.res <- c(megger$b[2], megger$se[2], megger$zval[2], megger$dfs,
+                  megger$ci.lb[2], megger$ci.ub[2], megger$pval[2])
+  names(megger.res) <- c("estimate","standarderror","t","df","lower","upper","p-value")
+  meggerd <- as.character(megger.res)
+  names(meggerd) <-names(megger.res)
+  meggerd[c(1:3,5,6)] <- as.character(round(megger.res[c(1:3,5,6)],dec1))
+  meggerd[4] <- as.character(round(megger.res[4]))
+  meggerd[7] <- as.character(round(megger.res,3))
+  if (megger.res[7]<.001) meggerd[7] <- "<.001"
   varcomp <- data.frame(standarderror=seo, plikrat=c(pwithin,pbetween),
                         row.names=c("within","between"))
   varcompd <- data.frame(domail=c("within","between"), 
@@ -57,8 +83,10 @@ awf <- function(frame1, dec1=2) {
   names(acheung) <- c("level 1","level 2","level 3")
   acheungd <- as.character(round(acheung,dec1))
   names(acheungd) <- names(acheung)
-  return(list(oeff=oeff, oeffd=oeffd, varcomp=varcomp,
-              varcompd=varcompd, cheung=acheung, cheungd=acheungd))
+  return(list(ovall=overall, oeff=oeff, oeffd=oeffd, varcomp=varcomp,
+              varcompd=varcompd, cheung=acheung, cheungd=acheungd,
+              megger=megger.res, meggerd=meggerd,
+              ohet=ohet,ohetd=ohetd,mhet=mhet,mhetd=mhetd))
 } # end function awf
 
 # moderator analysis, one categorical or continuous variable
@@ -308,11 +336,18 @@ ui <- fluidPage(
       tableOutput("raw"),
       h3(textOutput("overalltext")),
       tableOutput("overall"),
+      h3(textOutput("overallhettext")),
+      tableOutput("overallhet"),
       h3(textOutput("varcomptext")),
       tableOutput("varcomp"),
       h3(textOutput("cheungtext1")),
       h4(textOutput("cheungtext2")),
       tableOutput("cheung"),
+      h4(textOutput("meggertext")),
+      tableOutput("megger"),
+      h4(textOutput("meggerhettext")),
+      tableOutput("meggerhet"),
+      plotOutput(outputId = "funnel"),
       h3(textOutput("modtext")),
       h4(textOutput("modtextp")),
       tableOutput("modp"),
@@ -392,6 +427,11 @@ server <- function(input, output) {
     req(input$fil1)
     return("Overall meta regression")
   })
+  
+  output$overallhettext <- renderText({
+    req(input$fil1)
+    return("Overall, heterogeneity")
+  })
 
   output$varcomptext <- renderText({
     req(input$fil1)
@@ -406,6 +446,16 @@ server <- function(input, output) {
   output$cheungtext2 <- renderText({
     req(input$fil1)
     return("(Cheung's procedure)")
+  })
+  
+  output$meggertext <- renderText({
+    req(input$fil1)
+    return("Modified Egger test (Marengo and Montag)")
+  })
+  
+  output$meggerhettext <- renderText({
+    req(input$fil1)
+    return("Modified Egger, residual heterogeneity")
   })
   
   output$modtext <- renderText({
@@ -450,6 +500,14 @@ server <- function(input, output) {
     awot <- t(awo)
     return(awot)    
   })
+  
+  output$overallhet <- renderTable({
+    req(input$fil1)
+    awa <- aw()
+    heto <- awa$ohetd
+    hetot <- t(heto)
+    return(hetot)    
+  }) 
 
   output$varcomp <- renderTable({
     req(input$fil1)
@@ -465,6 +523,29 @@ server <- function(input, output) {
     awc <- awa$cheungd
     awct <- t(awc)
     return(awct)    
+  })
+  
+  output$megger <- renderTable({
+    req(input$fil1)
+    awa <- aw()
+    awm <- awa$meggerd
+    awmt <- t(awm)
+    return(awmt)    
+  }) 
+  
+  output$meggerhet <- renderTable({
+    req(input$fil1)
+    awa <- aw()
+    mego <- awa$mhetd
+    megot <- t(mego)
+    return(megot)    
+  })  
+  
+  output$funnel <- renderPlot({
+    req(input$fil1)
+    awa <- aw()
+    ova <- awa$ovall
+    return(funnel(ova, main="Funnel diagram"))
   })
   
   output$modp <- renderTable({
@@ -516,3 +597,4 @@ server <- function(input, output) {
 #############################
 # shiny app, putting together
 shinyApp(ui, server)
+
