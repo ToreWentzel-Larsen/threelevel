@@ -10,6 +10,6 @@ runApp("threelevel")
 
 The R packages metafor, as references in the article cited above, and shiny should be installed in advance. Data should be setup as described in the article, as shown in Table 1, page 157, except that data for each categorical moderator should be included as a single character variable, not as several dummy variables.
 
-March 20., 2021, included code for funnel plot and modified Egger test as described in the article 
+March 20., 2021, some minor updates, and included code for funnel plot and modified Egger test as described in the article 
 
 Marengo, D., & Montag, C. (2020). Digital Phenotyping of Big Five Personality via Facebook Data Mining: A Meta-Analysis. Digital Psychology, 1(1), 52–64. https://doi.org/10.24989/dp.v1i1.1823
