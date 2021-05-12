@@ -21,7 +21,7 @@ cheungdek <- function(metframe, rmaobj) {
   amountvariancelevel2 <- I2_2 * 100
   amountvariancelevel3 <- I2_3 * 100
   res <- c(amountvariancelevel1,amountvariancelevel2,amountvariancelevel3)
-  names(res) <- c("level1","level2","level3")
+  names(res) <- c("within","intermediate","between")
   return(list(rma=rmaobj, varcomp=res))
 } # end function cheungdek
 
@@ -70,7 +70,7 @@ awf <- function(frame1, dec1=2) {
   if (megger.res[7]<.001) meggerd[7] <- "<.001"
   varcomp <- data.frame(standarderror=seo, plikrat=c(pwithin,pbetween),
                         row.names=c("within","between"))
-  varcompd <- data.frame(domail=c("within","between"), 
+  varcompd <- data.frame(domain=c("within","between"), 
                          standarderror=varcomp$standarderror, 
                          plikrat=varcomp$plikrat)
   varcompd$standarderror <- round(varcomp$standarderror,dec1)
@@ -80,7 +80,7 @@ awf <- function(frame1, dec1=2) {
   if (varcomp[1,2]<.001) varcompd[1,3] <- "<.001" 
   if (varcomp[2,2]<.001) varcompd[2,3] <- "<.001" 
   acheung <- cheungdek(frame1, overall)$varcomp
-  names(acheung) <- c("level 1","level 2","level 3")
+  names(acheung) <- c("within","intermediate","between")
   acheungd <- as.character(round(acheung,dec1))
   names(acheungd) <- names(acheung)
   return(list(ovall=overall, oeff=oeff, oeffd=oeffd, varcomp=varcomp,
@@ -146,17 +146,29 @@ mod1f <- function(frame1, covnr=5, dec1=2, centr1=0) {
   hetonlyp <- 1
   if (classc=="factor") if (ncatc>2) hetonlyp <- 0
   if (hetonlyp==1) {
-    mpval <- c(modr$QEp)
-    names(mpval) <- c("heterogeneity")
-    mpvald <- as.character(round(mpval,3))
-    names(mpvald) <- c("heterogeneity")
-    mpvald[mpval<.001] <- "<0.001"
+    hetm1 <- c(modr$QE,modr$dfs,modr$QEp)
+    names(hetm1) <- c("Q","df","p")
+    hetm1d <- as.character(hetm1)
+    names(hetm1d) <- names(hetm1)
+    hetm1d[1] <- as.character(round(hetm1[1],dec1))
+    hetm1d[2] <- as.character(round(hetm1[2]))
+    hetm1d[3] <- as.character(round(hetm1[3],3))
+    hetm1d[3][hetm1[3]<.001] <- "<0.001"
   } else {
-    mpval <- c(modr$QEp, modr$QMp)
-    names(mpval) <- c("heterogen","moderator")
-    mpvald <- as.character(round(mpval,3))
-    names(mpvald) <- c("heterogeneity","moderator")
-    mpvald[mpval<.001] <- "<0.001"
+    hetm1 <- c(modr$QE,modr$dfs,modr$QEp, modr$QM,ncatc-1,modr$dfs, modr$QMp)
+    names(hetm1) <- c("Q","df","p","Qm","df1m","df2m","pm")
+    hetm1d <- hetm1
+    names(hetm1d) <- names(hetm1)
+    hetm1d <- as.character(hetm1d)
+    hetm1d[1] <- as.character(round(hetm1[1],dec1))
+    hetm1d[2] <- as.character(round(hetm1[2]))
+    hetm1d[3] <- as.character(round(hetm1[3],3))
+    hetm1d[3][hetm1[3]<.001] <- "<0.001"
+    hetm1d[4] <- as.character(round(hetm1[4],dec1))
+    hetm1d[5] <- as.character(round(hetm1[5]))
+    hetm1d[6] <- as.character(round(hetm1[6]))
+    hetm1d[7] <- as.character(round(hetm1[7],3))
+    hetm1d[7][hetm1[7]<.001] <- "<0.001"   
   } # end p-values for heterogeneity and the moderator
   names(estframe)[1] <- names1
   estframed <- estframe
@@ -166,8 +178,9 @@ mod1f <- function(frame1, covnr=5, dec1=2, centr1=0) {
   estframed$upper <- as.character(round(estframe$upper, dec1))
   estframed$p.value <- as.character(round(estframe$p.value, 3))
   estframed$p.value[estframe$p.value<.001] <- "<0.001"
-  return(list(semod=msemod, semodd=msemodd,pval=mpval, pvald=mpvald,
-              estframe=estframe, estframed=estframed))
+  return(list(semod=msemod, semodd=msemodd, 
+              estframe=estframe, estframed=estframed,
+              hetm1=hetm1d))
 } # end function mod1f
 
 # moderator analysis, more than one categorical or continuous variable
@@ -234,17 +247,32 @@ modmf <- function(frame1, covn="pyear,type,pstat", dec1=2, centr1="0", ref1="gen
   names(msemod) <-c("within","between")
   msemodd <- as.character(round(msemod,dec1))
   names(msemodd) <- names(msemod)
-  mpval <- c(modm$QEp, modm$QMp, rep(NA,length(covnam[catmult==1])))
-  names(mpval) <- c("heterogeneity","moderators",covnam[catmult==1])
+  hetmult <- c(modm$QE, modm$dfs, modm$QEp, 
+               modm$QM, length(modm$beta)-1, modm$dfs, modm$QMp)
+  names(hetmult) <- c("Q","df","p","Qm","df1m","df2m","pm")
+  hetmultd <- hetmult
+  names(hetmultd) <- names(hetmult)
+  hetmultd <- as.character(hetmultd)
+  hetmultd[1] <- as.character(round(hetmult[1],dec1))
+  hetmultd[2] <- as.character(round(hetmult[2]))
+  hetmultd[3] <- as.character(round(hetmult[3],3))
+  hetmultd[3][hetmult[3]<.001] <- "<0.001"
+  hetmultd[4] <- as.character(round(hetmult[4],dec1))
+  hetmultd[5] <- as.character(round(hetmult[5]))
+  hetmultd[6] <- as.character(round(hetmult[6]))
+  hetmultd[7] <- as.character(round(hetmult[7],3))
+  hetmultd[7][hetmult[7]<.001] <- "<0.001"   
+  mpval <- rep(NA,length(covnam[catmult==1]))
+  names(mpval) <- covnam[catmult==1]
   if (ncatmult>0)  {
     covnammult <- covnam[catmult==1]
     for (covnamnr in 1:length(covnammult)) {
       anovanr <- anova(modm, btt=covnammult[covnamnr])
-      mpval[2+covnamnr] <- anovanr$QMp
+      mpval[covnamnr] <- anovanr$QMp
     }
   }
   mpvald <- as.character(round(mpval,3))
-  names(mpvald) <-names(mpval)
+  names(mpvald) <- names(mpval)
   mpvald[mpval<.001] <- "<0.001"
   estnames <- row.names(modm$b)
   estnames[1] <-"pred.ref.centr"
@@ -261,8 +289,8 @@ modmf <- function(frame1, covn="pyear,type,pstat", dec1=2, centr1="0", ref1="gen
   estframed$upper <- as.character(round(estframe$upper, dec1))
   estframed$p.value <- as.character(round(estframe$p.value, 3))
   estframed$p.value[estframe$p.value<.001] <- "<0.001"
-  return(list(semod=msemod, semodd=msemodd, pval=mpval, pvald=mpvald,
-              estframe=estframe, estframed=estframed))
+  return(list(semod=msemod, semodd=msemodd, mpval=mpval, mpvald=mpvald,
+              hetmult=hetmultd, estframe=estframe, estframed=estframed))
 } # end function modmf
 
 # user interface
@@ -302,7 +330,7 @@ ui <- fluidPage(
                    value = 3),
       
       numericInput(inputId = "ndecr",
-                   label = "The number of decimales in the results:",
+                   label = "The number of decimals in the results:",
                    value = 3),
  
       numericInput(inputId = "onemod",
@@ -349,6 +377,9 @@ ui <- fluidPage(
       tableOutput("meggerhet"),
       plotOutput(outputId = "funnel"),
       h3(textOutput("modtext")),
+      h4(textOutput("modtexttest")),
+      h5(textOutput("modtexttest2")),
+      tableOutput("modtest"),
       h4(textOutput("modtextp")),
       tableOutput("modp"),
       h4(textOutput("modtextse")),
@@ -356,6 +387,9 @@ ui <- fluidPage(
       h4(textOutput("modtextcoef")),
       tableOutput("modcoef"),
       h3(textOutput("multtext")),
+      h4(textOutput("multmodtexthet")),
+      h5(textOutput("multmodtexthet2")),
+      tableOutput("multmodhet"),
       h4(textOutput("multmodtextp")),
       tableOutput("multmodp"),
       h4(textOutput("multmodtextse")),
@@ -365,7 +399,6 @@ ui <- fluidPage(
     )
   )
 )
-
 ################################
 # shiny app, server instructions
 
@@ -376,7 +409,8 @@ server <- function(input, output) {
              header = TRUE,
              sep = input$sep,
              quote = "",
-             dec=input$desfil)
+             dec=input$desfil,
+             stringsAsFactors=TRUE)
   })
   
   aw <- reactive({
@@ -463,9 +497,14 @@ server <- function(input, output) {
     return("Analysis for one moderator")
   })
   
-  output$modtextp <- renderText({
+  output$modtexttest <- renderText({
     req(input$fil1)
-    return("Summary p-values")
+    return("Summary tests. First residual homogeneity,")
+  })  
+  
+  output$modtexttest2 <- renderText({
+    req(input$fil1)
+    return(".....next (suffix m) for the moderator if necessary")
   })  
   
   output$modtekstse <- renderText({
@@ -480,7 +519,22 @@ server <- function(input, output) {
   
   output$multmodtextp <- renderText({
     req(input$fil1)
-    return("Summary p-values")
+    return("Summary p-values for individual moderators")
+  })
+  
+  output$multmodtexthet <- renderText({
+    req(input$fil1)
+    return("Tests of residual heterogeneity")
+  })
+  
+  output$multmodtexthet2 <- renderText({
+    req(input$fil1)
+    return("... and (suffix m) of moderators together")
+  })
+  
+  output$multmodtextp2 <- renderText({
+    req(input$fil1)
+    return("... categorical, more than two categories")
   })
   
   output$multmodtextse <- renderText({
@@ -548,12 +602,15 @@ server <- function(input, output) {
     return(funnel(ova, main="Funnel diagram"))
   })
   
-  output$modp <- renderTable({
+  output$modtest <- renderTable({
     req(input$fil1)
     md1 <- mod()
-    pval <- md1$pvald
-    pvalt <- t(pval)
-    return(pvalt)
+    testval <- md1$hetm1
+    len <- length(testval)
+    if (len==7) names(testval) <-
+      c("Q","df","p","Qm","df1m","df2m","pm")
+    testvalt <- t(testval)
+    return(testvalt)
   }) 
   
   output$modvark <- renderTable({
@@ -573,9 +630,18 @@ server <- function(input, output) {
   output$multmodp <- renderTable({
     req(input$fil1)
     mu1 <- multmod()
-    pvalu <- mu1$pvald
-    pvalut <- t(pvalu)
-    return(pvalut)
+    mpvalu <- mu1$mpvald
+    mpvalut <- t(mpvalu)
+    return(mpvalut)
+  })
+  
+  output$multmodhet <- renderTable({
+    req(input$fil1)
+    mu1 <- multmod()
+    mshet <- mu1$hetmult
+    names(mshet) <- c("Q","df","p","Qm","df1m","df2m","pm")
+    mshett <- t(mshet)
+    return(mshett)
   })
   
   output$multmodvarc <- renderTable({
@@ -597,4 +663,3 @@ server <- function(input, output) {
 #############################
 # shiny app, putting together
 shinyApp(ui, server)
-
