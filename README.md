@@ -13,3 +13,5 @@ The R packages metafor, as references in the article cited above, and shiny shou
 March 20., 2021, some minor updates, and included code for funnel plot and modified Egger test as described in the article 
 
 Marengo, D., & Montag, C. (2020). Digital Phenotyping of Big Five Personality via Facebook Data Mining: A Meta-Analysis. Digital Psychology, 1(1), 52–64. https://doi.org/10.24989/dp.v1i1.1823
+
+This repo also contains files related to ongoing work together with other researchers at the Centre for Child and Adolescent Mental Health, Eastern and Southern Norway where three-level models are used. At present the file Data for Metaanalysis Emotion Regulation Interventions.csv with data used in a project on emotion regulation is included. When the work is published, more information and a link to the article will be included.
