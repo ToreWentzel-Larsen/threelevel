@@ -302,6 +302,11 @@ ui <- fluidPage(
   sidebarLayout(
     # Sidebar panel for inputs ----
     sidebarPanel(
+      radioButtons("ls", "Language for results:",
+                   choices = c(English = "English",
+                               norsk = "norsk"),
+                   selected = "English"),
+      
       fileInput("fil1", "Retrieve the results from the studies:",
                 multiple = TRUE,
                 accept = c("text/csv",
@@ -391,6 +396,7 @@ ui <- fluidPage(
       h5(textOutput("multmodtexthet2")),
       tableOutput("multmodhet"),
       h4(textOutput("multmodtextp")),
+      h5(textOutput("multmodtextp2")),
       tableOutput("multmodp"),
       h4(textOutput("multmodtextse")),
       tableOutput("multmodvarc"),
@@ -452,105 +458,191 @@ server <- function(input, output) {
   output$basetext <- renderText({
     req(input$fil1)
     stud <- input$studies
+    lasp <- input$ls
     res <- ""
-    if (stud!="none") res <- "Data from the studies"
+    if (stud!="none"&lasp=="English") res <- "Data from the studies"
+    if (stud!="none"&lasp=="norsk") res <- "Grunnlagsdata"
     return(res)
   })
 
   output$overalltext <- renderText({
     req(input$fil1)
-    return("Overall meta regression")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Overall meta regression"
+    if (lasp=="norsk") res <- "Overall meta-regresjon"
+    return(res)
   })
   
   output$overallhettext <- renderText({
     req(input$fil1)
-    return("Overall, heterogeneity")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Overall heterogeneity"
+    if (lasp=="norsk") res <- "Overall heterogenitet"
+    return(res)
   })
 
   output$varcomptext <- renderText({
     req(input$fil1)
-    return("Variance components with likelihood ratio tests")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Variance components with likelihood ratio tests"
+    if (lasp=="norsk") res <- "Varianskomponenter med likelihood ratio-tester"
+    return(res)
   })
   
   output$cheungtext1 <- renderText({
     req(input$fil1)
-    return("Total variance, percent distribution by levels")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Total variance, percent distribution by levels"
+    if (lasp=="norsk") res <- "Total varians, prosentfordeling på nivåene"
+    return(res)
   })
   
   output$cheungtext2 <- renderText({
     req(input$fil1)
-    return("(Cheung's procedure)")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "(Cheung's procedure)"
+    if (lasp=="norsk") res <- "(Cheungs framgangsmåte)"
+    return(res)
   })
   
   output$meggertext <- renderText({
     req(input$fil1)
-    return("Modified Egger test (Marengo and Montag)")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Modified Egger test (Marengo and Montag)"
+    if (lasp=="norsk") res <- "Modifisert Egger-test (Marengo og Montag)"
+    return(res)
   })
   
   output$meggerhettext <- renderText({
     req(input$fil1)
-    return("Modified Egger, residual heterogeneity")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Modified Egger, residual heterogeneity"
+    if (lasp=="norsk") res <- "Modifisert Egger, residual-heterogenitet"
+    return(res)
   })
   
   output$modtext <- renderText({
     req(input$fil1)
-    return("Analysis for one moderator")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Analysis for one moderator"
+    if (lasp=="norsk") res <- "Analyse for en moderator"
+    return(res)
   })
   
   output$modtexttest <- renderText({
     req(input$fil1)
-    return("Summary tests. First residual homogeneity,")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Summary tests. First residual heterogeneity"
+    if (lasp=="norsk") res <- "Samlede tester, først residual-heterogenitet"
+    return(res)
   })  
   
   output$modtexttest2 <- renderText({
     req(input$fil1)
-    return(".....next (suffix m) for the moderator if necessary")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- ".....next (suffix m) for the moderator if necessary"
+    if (lasp=="norsk") res <- ".....deretter (endelse m) for moderatoren om nødvendig"
+    return(res)
   })  
   
   output$modtekstse <- renderText({
     req(input$fil1)
-    return("Variance components, standard deviation")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Variance components, standard deviation"
+    if (lasp=="norsk") res <- "Varianskomponenter, standardavvik"
+    return(res)
   })
   
   output$multtext <- renderText({
     req(input$fil1)
-    return("Model with multiple moderators")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Model with multiple moderators"
+    if (lasp=="norsk") res <- "Modell med flere moderatorer"
+    return(res)
   })
   
   output$multmodtextp <- renderText({
     req(input$fil1)
-    return("Summary p-values for individual moderators")
-  })
-  
-  output$multmodtexthet <- renderText({
-    req(input$fil1)
-    return("Tests of residual heterogeneity")
-  })
-  
-  output$multmodtexthet2 <- renderText({
-    req(input$fil1)
-    return("... and (suffix m) of moderators together")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Summary p-values for individual moderators"
+    if (lasp=="norsk") res <- "Samlede p-verdier for de enkelte moderatorene"
+    return(res)
   })
   
   output$multmodtextp2 <- renderText({
     req(input$fil1)
-    return("... categorical, more than two categories")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "... if categorical with more than two caregories"
+    if (lasp=="norsk") res <- "... for de kategoriske med mer enn to kategorier"
+    return(res)
+  })
+  
+  
+  output$multmodtexthet <- renderText({
+    req(input$fil1)
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Tests of residual heterogeneity"
+    if (lasp=="norsk") res <- "tester for residual-hogenitet"
+    return(res)
+  })
+  
+  output$multmodtexthet2 <- renderText({
+    req(input$fil1)
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "... and (suffix m) of moderators together"
+    if (lasp=="norsk") res <- "... og (endelse m) for moderatorene samlet"
+    return(res)
+  })
+  
+  output$multmodtextp2 <- renderText({
+    req(input$fil1)
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "... categorical, more than two categories"
+    if (lasp=="norsk") res <- "... kategoriske, med mer enn to kategorier"
+    return(res)
   })
   
   output$multmodtextse <- renderText({
     req(input$fil1)
-    return("Variance components, standard deviation")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Variance components, standard deviation"
+    if (lasp=="norsk") res <- "Varianskomponenter, standardfeil"
+    return(res)
   })
   
   output$multmodtextcoef <- renderText({
     req(input$fil1)
-    return("Coefficients")
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Coefficients"
+    if (lasp=="norsk") res <- "Koeffisienter"
+    return(res)
   })
   
   output$overall <- renderTable({
     req(input$fil1)
+    lasp <- input$ls
     awa <- aw()
     awo <- awa$oeffd
+    if (lasp=="norsk") names(awo) <- c("effekt","nedre","øvre","p-verdi")
     awot <- t(awo)
     return(awot)    
   })
@@ -565,24 +657,32 @@ server <- function(input, output) {
 
   output$varcomp <- renderTable({
     req(input$fil1)
+    lasp <- input$ls
     awa <- aw()
     awv <- awa$varcompd
-    names(awv)[3] <- "p-value"
+    if (lasp=="English") names(awv)[3] <- "p-value"
+    if (lasp=="norsk") names(awv) <- c("område","standardfeil","p-verdi")
+    if (lasp=="norsk") awv[,1] <- c("innen","mellom")
     return(awv)    
   })
   
   output$cheung <- renderTable({
     req(input$fil1)
+    lasp <- input$ls
     awa <- aw()
     awc <- awa$cheungd
+    if (lasp=="norsk") names(awc) <- c("inni","midt","mellom")
     awct <- t(awc)
     return(awct)    
   })
   
   output$megger <- renderTable({
     req(input$fil1)
+    lasp <- input$ls
     awa <- aw()
     awm <- awa$meggerd
+    if (lasp=="norsk") names(awm) <- 
+      c("estimat","standardfeil","t","df","nedre","øvre","p-verdi")
     awmt <- t(awm)
     return(awmt)    
   }) 
@@ -623,8 +723,12 @@ server <- function(input, output) {
   
   output$modcoef <- renderTable({
     req(input$fil1)
+    lasp <- input$ls
     md1 <- mod()
-    return(md1$estframed)
+    md1e <- md1$estframed
+    if (lasp=="norsk") 
+      names(md1e)[-1] <- c("estimat","standardfeil","nedre","øvre","p-verdi")
+    return(md1e)
   })
   
   output$multmodp <- renderTable({
@@ -646,16 +750,22 @@ server <- function(input, output) {
   
   output$multmodvarc <- renderTable({
     req(input$fil1)
+    lasp <- input$ls
     mu1 <- multmod()
     semu <- mu1$semodd
+    if (lasp=="norsk") names(semu) <- c("inni","mellom")
     semut <- t(semu)
     return(semut)
   })
  
   output$multmodcoef <- renderTable({
     req(input$fil1)
+    lasp <- input$ls
     mu1 <- multmod()
-    return(mu1$estframed)
+    mefd <- mu1$estframed
+    if (lasp=="norsk") names(mefd) <- 
+      c("navn","estimat","standardfeil","nedre","øvre","p-verdi")
+    return(mefd)
   })
 
 }
