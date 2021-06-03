@@ -16,4 +16,4 @@ Marengo, D., & Montag, C. (2020). Digital Phenotyping of Big Five Personality vi
 
 May 13., 2021, some minor updates, and now possible to get output in Norwegian.
 
-This repo also contains files related to ongoing work together with other researchers at the Centre for Child and Adolescent Mental Health, Eastern and Southern Norway where three-level models are used. At present the file Data for Metaanalysis Emotion Regulation Interventions.csv with data used in a project on emotion regulation is included. When the work is published, more information and a link to the article will be included.
+This repo also contains files related to ongoing work together with other researchers at the Centre for Child and Adolescent Mental Health, Eastern and Southern Norway where three-level models are used. At present the files Data for Metaanalysis Emotion Regulation Interventions.csv and R file for Analysis  Metaanalysis Emotion Regulation Interventions.csv with data used in a project on emotion regulation is included. When the work is published, more information and a link to the article will be included.
