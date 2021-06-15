@@ -16,21 +16,21 @@ studyID;effectsizeID;y;v;GenderS;Mean_age;Accept_Mindfulness_focus;Intervention_
 19;86;0,693378888;0,106260305;Both_genders;9,31;AccMind;UniP;Active;EmoReg;EmoMeasure;Parent;Low
 19;87;0,540989014;0,10390899;Both_genders;9,31;AccMind;UniP;Active;EmoReg;EmoMeasure;Parent;Low
 19;88;0;0,100250627;Both_genders;9,31;AccMind;UniP;Active;EmoReg;EmoMeasure;Parent;Low
-20;89;-0,4809878;0,205783732;Girls_only; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
-20;90;-0,018380036;0,200008446;Girls_only; ;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
-20;91;0,030396453;0,200023099;Girls_only; ;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
-20;92;-0,081403163;0,200165662;Girls_only; ;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
-20;93;0,054772016;0,200074999;Girls_only; ;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
-20;94;-0,058175324;0,200084609;Girls_only; ;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
-20;95;-0,067968015;0,200115491;Girls_only; ;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
-20;96;0,052494975;0,200068893;Girls_only; ;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
-20;97;-0,432739196;0,20468158;Girls_only; ;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
-20;98;0,274524082;0,201884087;Girls_only; ;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
-20;99;-0,112222483;0,200314847;Girls_only; ;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
-20;100;0,637245566;0,210152048;Girls_only; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
-20;101;0,333924388;0,202787637;Girls_only; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
-20;102;0,427934531;0,204578199;Girls_only; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
-20;103;0,154175611;0,200594253;Girls_only; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+20;89;-0,4809878;0,205783732;Girls_only;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+20;90;-0,018380036;0,200008446;Girls_only;NA;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
+20;91;0,030396453;0,200023099;Girls_only;NA;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
+20;92;-0,081403163;0,200165662;Girls_only;NA;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
+20;93;0,054772016;0,200074999;Girls_only;NA;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
+20;94;-0,058175324;0,200084609;Girls_only;NA;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
+20;95;-0,067968015;0,200115491;Girls_only;NA;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
+20;96;0,052494975;0,200068893;Girls_only;NA;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
+20;97;-0,432739196;0,20468158;Girls_only;NA;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
+20;98;0,274524082;0,201884087;Girls_only;NA;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
+20;99;-0,112222483;0,200314847;Girls_only;NA;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
+20;100;0,637245566;0,210152048;Girls_only;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+20;101;0,333924388;0,202787637;Girls_only;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+20;102;0,427934531;0,204578199;Girls_only;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+20;103;0,154175611;0,200594253;Girls_only;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
 23;104;1,143323901;0,024410973;Both_genders;5,66;NotAccMind;BehParTrain;Active;EmoReg;EmoMeasure;Parent;Low
 23;105;0,675233959;0,022182574;Both_genders;5,66;NotAccMind;BehParTrain;Active;EmoReg;EmoMeasure;Parent;Low
 23;106;0,523324892;0,021705945;Both_genders;5,66;NotAccMind;BehParTrain;Active;EmoReg;EmoMeasure;Parent;Low
@@ -66,67 +66,67 @@ studyID;effectsizeID;y;v;GenderS;Mean_age;Accept_Mindfulness_focus;Intervention_
 29;130;0,399488733;0,135993187;Both_genders;15,43;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
 29;131;1,436553008;0,167728076;Both_genders;15,43;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
 29;132;1,596924843;0,175836149;Both_genders;15,43;NotAccMind;CogTrain;Active;OtherSR;MentalH;Child;Unclear
-31;133;0,822354658;0,039437578; ; ;NotAccMind;CBT;Active;IntDiff;MentalH;Child;Low
-31;134;0,412321736;0,037836822; ; ;NotAccMind;CBT;Active;IntDiff;MentalH;Child;Low
-31;135;0,635886788;0,127450075; ; ;NotAccMind;CBT;Active;IntDiff;MentalH;Parent;Low
-31;136;0,3659842;0,120025327; ; ;NotAccMind;CBT;Active;IntDiff;MentalH;Parent;Low
-31;137;0,144186409;0,071705418; ; ;NotAccMind;CBT;Active;GenMentH;MentalH;Other;Low
-31;138;-0,2;0,036545455; ; ;NotAccMind;CBT;Active;EmoReg;EmoMeasure;Child;Low
-34;154;0,760536285;0,02898607;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
-34;155;0,596451848;0,028233838;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
-34;156;0,668192077;0,028540344;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
-34;157;0,924227313;0,029917761;Both_genders; ;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
-34;158;0,742236469;0,028893163;Both_genders; ;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
-34;159;0,80889117;0,029242453;Both_genders; ;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
-34;160;0,682318099;0,02922442;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
-34;161;0,588401607;0,028812897;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
-34;162;0,554474412;0,028679192;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
-34;163;0,627918603;0,02897864;Both_genders; ;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
-34;164;0,475811302;0,028399725;Both_genders; ;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
-34;165;0,738701648;0,029500703;Both_genders; ;AccMind;Rumfocus;Passive;GenMentH;MentalH;Child;Unclear
-35;166;0,39901606;0,042495905;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;167;0,367561133;0,042370319;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;168;0,30077325;0,042137836;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;169;0,727898093;0,044426227;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;170;6,363099778;0,252547077;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;171;6;0,229166667;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;172;0,355966752;0,042326627;Both_genders; ;NotAccMind;BehParTrain;Passive;IntDiff;MentalH;Parent;Low
-35;173;1,086428953;0,047814208;Both_genders; ;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Parent;Low
-35;174;0,285714286;0,042091837;Both_genders; ;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Parent;Low
-35;175;0,146146864;0,041777911;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;176;0,116463695;0,041737311;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;177;-0,039837792;0,041674933;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;178;0,42953209;0,042627593;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;179;2,211779448;0,067145668;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;180;2,220699631;0,067351598;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
-35;181;-0,30691565;0,042157277;Both_genders; ;NotAccMind;BehParTrain;Passive;IntDiff;MentalH;Parent;Low
-35;182;0,883452209;0,045731707;Both_genders; ;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Parent;Low
-35;183;0,6;0,043541667;Both_genders; ;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Parent;Low
-35;184;0,142590148;0,041772562;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
-35;185;0,101067886;0,041719868;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
-35;186;-0,16292274;0,041804916;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
-35;187;0,382420712;0,042428363;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
-35;188;-0,098347441;0,041717043;Both_genders; ;NotAccMind;BehParTrain;Passive;IntDiff;MentalH;Other;Low
-35;189;2;0,0625;Both_genders; ;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Child;Low
-35;190;0;0,041666667;Both_genders; ;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Child;Low
-35;192;0;0,041666667;Both_genders; ;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
+31;133;0,822354658;0,039437578;NA;NA;NotAccMind;CBT;Active;IntDiff;MentalH;Child;Low
+31;134;0,412321736;0,037836822;NA;NA;NotAccMind;CBT;Active;IntDiff;MentalH;Child;Low
+31;135;0,635886788;0,127450075;NA;NA;NotAccMind;CBT;Active;IntDiff;MentalH;Parent;Low
+31;136;0,3659842;0,120025327;NA;NA;NotAccMind;CBT;Active;IntDiff;MentalH;Parent;Low
+31;137;0,144186409;0,071705418;NA;NA;NotAccMind;CBT;Active;GenMentH;MentalH;Other;Low
+31;138;-0,2;0,036545455;NA;NA;NotAccMind;CBT;Active;EmoReg;EmoMeasure;Child;Low
+34;154;0,760536285;0,02898607;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+34;155;0,596451848;0,028233838;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+34;156;0,668192077;0,028540344;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+34;157;0,924227313;0,029917761;Both_genders;NA;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
+34;158;0,742236469;0,028893163;Both_genders;NA;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
+34;159;0,80889117;0,029242453;Both_genders;NA;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
+34;160;0,682318099;0,02922442;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+34;161;0,588401607;0,028812897;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+34;162;0,554474412;0,028679192;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+34;163;0,627918603;0,02897864;Both_genders;NA;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
+34;164;0,475811302;0,028399725;Both_genders;NA;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
+34;165;0,738701648;0,029500703;Both_genders;NA;AccMind;Rumfocus;Passive;GenMentH;MentalH;Child;Unclear
+35;166;0,39901606;0,042495905;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;167;0,367561133;0,042370319;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;168;0,30077325;0,042137836;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;169;0,727898093;0,044426227;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;170;6,363099778;0,252547077;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;171;6;0,229166667;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;172;0,355966752;0,042326627;Both_genders;NA;NotAccMind;BehParTrain;Passive;IntDiff;MentalH;Parent;Low
+35;173;1,086428953;0,047814208;Both_genders;NA;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Parent;Low
+35;174;0,285714286;0,042091837;Both_genders;NA;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Parent;Low
+35;175;0,146146864;0,041777911;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;176;0,116463695;0,041737311;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;177;-0,039837792;0,041674933;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;178;0,42953209;0,042627593;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;179;2,211779448;0,067145668;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;180;2,220699631;0,067351598;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Parent;Low
+35;181;-0,30691565;0,042157277;Both_genders;NA;NotAccMind;BehParTrain;Passive;IntDiff;MentalH;Parent;Low
+35;182;0,883452209;0,045731707;Both_genders;NA;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Parent;Low
+35;183;0,6;0,043541667;Both_genders;NA;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Parent;Low
+35;184;0,142590148;0,041772562;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
+35;185;0,101067886;0,041719868;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
+35;186;-0,16292274;0,041804916;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
+35;187;0,382420712;0,042428363;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
+35;188;-0,098347441;0,041717043;Both_genders;NA;NotAccMind;BehParTrain;Passive;IntDiff;MentalH;Other;Low
+35;189;2;0,0625;Both_genders;NA;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Child;Low
+35;190;0;0,041666667;Both_genders;NA;NotAccMind;BehParTrain;Passive;EmoReg;EmoMeasure;Child;Low
+35;192;0;0,041666667;Both_genders;NA;NotAccMind;BehParTrain;Passive;ExtDiff;MentalH;Other;Low
 37;196;0,699439756;0,052591455;Both_genders;18,92;AccMind;DBT;Passive;IntDiff;MentalH;Child;Unclear
 37;197;0,545854683;0,051410846;Both_genders;18,92;AccMind;DBT;Passive;IntDiff;MentalH;Child;Unclear
 37;198;0,675453533;0,052387884;Both_genders;18,92;AccMind;DBT;Passive;EmoReg;EmoMeasure;Child;Unclear
 38;199;0,794101388;0,190631708;Both_genders;15;NotAccMind;CBT;Active;EmoReg;EmoMeasure;Child;Unclear
 38;200;0,598007735;0,184697278;Both_genders;15;NotAccMind;CBT;Active;EmoReg;EmoMeasure;Child;Unclear
 38;201;0,163472593;0,177504018;Both_genders;15;NotAccMind;CBT;Active;IntDiff;MentalH;Child;Unclear
-36;193;0,521300494;0,103647554;Girls_only; ;AccMind;DBT;Active;IntDiff;MentalH;Child;Unclear
-36;194;-0,097907632;0,10037045;Girls_only; ;AccMind;DBT;Active;EmoReg;EmoMeasure;Child;Unclear
-36;195;0,542269186;0,103926325;Girls_only; ;AccMind;DBT;Active;EmoReg;EmoMeasure;Child;Unclear
-5;202;0,175535001;0,032223918;Both_genders; ;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
-5;203;0,162233137;0,032205946;Both_genders; ;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
-5;204;0,127717454;0,032165915;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
-5;205;0,356120953;0,032607956;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
-5;206;0,30696845;0,033078422;Both_genders; ;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
-5;207;0,249769157;0,032948971;Both_genders; ;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
-5;208;0,188213055;0,032839375;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
-5;209;0,232671086;0,032915439;Both_genders; ;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+36;193;0,521300494;0,103647554;Girls_only;NA;AccMind;DBT;Active;IntDiff;MentalH;Child;Unclear
+36;194;-0,097907632;0,10037045;Girls_only;NA;AccMind;DBT;Active;EmoReg;EmoMeasure;Child;Unclear
+36;195;0,542269186;0,103926325;Girls_only;NA;AccMind;DBT;Active;EmoReg;EmoMeasure;Child;Unclear
+5;202;0,175535001;0,032223918;Both_genders;NA;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
+5;203;0,162233137;0,032205946;Both_genders;NA;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
+5;204;0,127717454;0,032165915;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+5;205;0,356120953;0,032607956;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+5;206;0,30696845;0,033078422;Both_genders;NA;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
+5;207;0,249769157;0,032948971;Both_genders;NA;AccMind;Rumfocus;Passive;IntDiff;MentalH;Child;Unclear
+5;208;0,188213055;0,032839375;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
+5;209;0,232671086;0,032915439;Both_genders;NA;AccMind;Rumfocus;Passive;EmoReg;EmoMeasure;Child;Unclear
 6;210;0,779049982;0,134973304;Both_genders;13,6;AccMind;Mindfocus;Passive;IntDiff;MentalH;Clinician;Unclear
 6;211;-0,061818914;0,125549908;Both_genders;13,6;AccMind;Mindfocus;Passive;IntDiff;MentalH;Child;Unclear
 6;212;0,647058824;0,132032151;Both_genders;13,6;AccMind;Mindfocus;Passive;IntDiff;MentalH;Child;Unclear
@@ -185,17 +185,17 @@ studyID;effectsizeID;y;v;GenderS;Mean_age;Accept_Mindfulness_focus;Intervention_
 14;255;1,00617947;0,044197539;Both_genders;11,2;NotAccMind;CBT;Passive;GenMentH;MentalH;Parent;Unclear
 14;256;0,855069233;0,04283223;Both_genders;11,2;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Unclear
 3;299;-0,060644199;0,010118294;Both_genders;18;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Low
-15;267;-0,274950041;0,086258774;Both_genders; ;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
-15;268;-0,496580609;0,088077868;Both_genders; ;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
-15;269;-0,291766048;0,086360156;Both_genders; ;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
-15;270;-0,454747012;0,087654491;Both_genders; ;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
-15;271;0,074652485;0,085513833;Both_genders; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
-15;272;0,22847369;0,086009867;Both_genders; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
-15;273;-0,338040104;0,086670196;Both_genders; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
-15;274;0,088216894;0,085537335;Both_genders; ;NotAccMind;CogTrain;Active;OtherSR;MentalH;NA;Unclear
-15;275;0,132048422;0,085640043;Both_genders; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
-15;276;-0,589604811;0,089152778;Both_genders; ;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
-15;277;-0,056156387;0,085488094;Both_genders; ;NotAccMind;CogTrain;Active;OtherSR;MentalH;NA;Unclear
+15;267;-0,274950041;0,086258774;Both_genders;NA;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
+15;268;-0,496580609;0,088077868;Both_genders;NA;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
+15;269;-0,291766048;0,086360156;Both_genders;NA;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
+15;270;-0,454747012;0,087654491;Both_genders;NA;NotAccMind;CogTrain;Active;IntDiff;MentalH;Child;Unclear
+15;271;0,074652485;0,085513833;Both_genders;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+15;272;0,22847369;0,086009867;Both_genders;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+15;273;-0,338040104;0,086670196;Both_genders;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+15;274;0,088216894;0,085537335;Both_genders;NA;NotAccMind;CogTrain;Active;OtherSR;MentalH;NA;Unclear
+15;275;0,132048422;0,085640043;Both_genders;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+15;276;-0,589604811;0,089152778;Both_genders;NA;NotAccMind;CogTrain;Active;EmoReg;EmoMeasure;Child;Unclear
+15;277;-0,056156387;0,085488094;Both_genders;NA;NotAccMind;CogTrain;Active;OtherSR;MentalH;NA;Unclear
 4;16;0,33;0,017046192;Boys_only;8,5;NotAccMind;CBT;Active;EmoReg;EmoMeasure;Child;Low
 4;17;0,36;0,01708968;Boys_only;8,5;NotAccMind;CBT;Active;EmoReg;EmoMeasure;Child;Low
 4;18;0,31;0,017019302;Boys_only;8,5;NotAccMind;CBT;Active;EmoReg;EmoMeasure;Child;Low
@@ -222,19 +222,19 @@ studyID;effectsizeID;y;v;GenderS;Mean_age;Accept_Mindfulness_focus;Intervention_
 24;287;1,137260366;0,153339296;Both_genders;19,2;AccMind;Mindfocus;Passive;EmoReg;EmoMeasure;Child;Low
 24;288;0,597225331;0,138231505;Both_genders;19,2;AccMind;Mindfocus;Passive;EmoReg;EmoMeasure;Child;Low
 24;289;0,442011449;0,135629828;Both_genders;19,2;AccMind;Mindfocus;Passive;IntDiff;MentalH;Child;Low
-8;25;0,604772136;0,217477067;Both_genders; ;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
-8;26;0,802597703;0,22443741;Both_genders; ;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
-8;27;1,049910601;0,23589114;Both_genders; ;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
-8;28;0,848369253;0,226326593;Both_genders; ;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
-8;29;0,988887802;0,23278081;Both_genders; ;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
-8;30;0,913968326;0,229216786;Both_genders; ;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
-8;31;0,813494939;0,224877684;Both_genders; ;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
-8;32;1,261696518;0,248130286;Both_genders; ;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Low
-8;33;1,371236243;0,255340554;Both_genders; ;NotAccMind;CBT;Passive;GenMentH;MentalH;Child;Low
-8;34;0,715637706;0,221136766;Both_genders; ;NotAccMind;CBT;Passive;GenMentH;MentalH;Child;Low
-8;35;-0,606381075;0,217525784;Both_genders; ;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Low
-8;36;-0,119999828;0,208693332;Both_genders; ;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Low
-8;37;0,471113049;0,213882021;Both_genders; ;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Low
+8;25;0,604772136;0,217477067;Both_genders;NA;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
+8;26;0,802597703;0,22443741;Both_genders;NA;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
+8;27;1,049910601;0,23589114;Both_genders;NA;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
+8;28;0,848369253;0,226326593;Both_genders;NA;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
+8;29;0,988887802;0,23278081;Both_genders;NA;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
+8;30;0,913968326;0,229216786;Both_genders;NA;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
+8;31;0,813494939;0,224877684;Both_genders;NA;NotAccMind;CBT;Passive;IntDiff;MentalH;Child;Low
+8;32;1,261696518;0,248130286;Both_genders;NA;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Low
+8;33;1,371236243;0,255340554;Both_genders;NA;NotAccMind;CBT;Passive;GenMentH;MentalH;Child;Low
+8;34;0,715637706;0,221136766;Both_genders;NA;NotAccMind;CBT;Passive;GenMentH;MentalH;Child;Low
+8;35;-0,606381075;0,217525784;Both_genders;NA;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Low
+8;36;-0,119999828;0,208693332;Both_genders;NA;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Low
+8;37;0,471113049;0,213882021;Both_genders;NA;NotAccMind;CBT;Passive;EmoReg;EmoMeasure;Child;Low
 9;38;0,067043957;0,088510396;Girls_only;17,4;NotAccMind;EmoRegTrain;Passive;EmoReg;EmoMeasure;Child;Low
 9;39;-0,240909717;0,089092381;Girls_only;17,4;NotAccMind;EmoRegTrain;Passive;OtherSR;MentalH;Child;Low
 9;40;0,17909023;0,092996048;Girls_only;17,4;NotAccMind;EmoRegTrain;Passive;IntDiff;MentalH;Child;Low
