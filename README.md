@@ -5,6 +5,7 @@ Assink, M. & Wibbelink, C. J. M. (2016). Fitting three-level meta-analytic model
 The app is free to use and modify under the usual GPL terms. It has been thoroughly checked for the main example in the article by Assink and Wibbelink, but it is free software and there is absolutely no warranty. The code is in app2.r or app3.r as detailed below, for running place the code in a subdirectory threelevel, rename to app.r, and place a small R script immediately outside the subdirectory with the following two lines of code
 
 library(metafor);library(shiny)
+
 runApp("threelevel")
 
 The R packages metafor, as referenced in the article cited above, and shiny should be installed in advance. Data should be setup as described in the article, as shown in Table 1, page 157, except that data for each categorical moderator should be included as a single character variable, not as several dummy variables.
