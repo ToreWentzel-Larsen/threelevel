@@ -91,6 +91,27 @@ awf <- function(frame1, dec1=2) {
               ohet=ohet,ohetd=ohetd,mhet=mhet,mhetd=mhetd))
 } # end function awf
 
+# function to extract correlations between levels, one moderator
+corr1catf <- function(vb, levcat) { 
+  # vb, variance-covariance matrix of the moderator 
+  # levcat, levels of the moderator, in correct order
+  ncat <- length(levcat)
+  vbcat <- vb # initializing, should be var-cov matr for means not contrasts
+  rownames(vbcat) <- levcat
+  colnames(vbcat) <- levcat
+  vbcat[1,-1] <- vb[1,-1] + vb[1,1] # first row correct 
+  vbcat[-1,1] <- vb[-1,1] + vb[1,1] # first column correct 
+  vbcat[-1,-1] <- vb[-1,-1] + vb[1,1] + # what remails correct
+    matrix(rep(vb[1,-1],ncat-1), ncol=ncat-1, byrow=TRUE) +
+    matrix(rep(vb[-1,1],ncat-1), nrow=ncat-1)
+  vbcor <- diag(1/sqrt(diag(vbcat))) %*%
+    vbcat %*% diag(1/sqrt(diag(vbcat)))
+  diag(vbcor) <- sqrt(diag(vbcat)) # replace diag by se for easy check
+  rownames(vbcor) <- levcat
+  colnames(vbcor) <- levcat
+  return(list(varcov=vb, varlev=vbcat, corr=vbcor))
+} # end function corr1catf
+
 # moderator analysis, one categorical or continuous variable
 mod1f <- function(frame1, covnr=5, dec1=2, centr1=0) {
   if (covnr<5) stop("the moderators begin at nr 5")
@@ -121,7 +142,13 @@ mod1f <- function(frame1, covnr=5, dec1=2, centr1=0) {
       levc <- catc[catnr]
       modc <- rma.mv(y, v, mods = ~ relevel(covact, ref=levc), tdist=TRUE, data=frame1,
                      random = list(~ 1 | effectsizeID, ~ 1 | studyID))
-      if (catnr==1) msemod <- sqrt(modc$sigma2)
+      if (catnr==1) {
+        msemod <- sqrt(modc$sigma2)
+        modcorr <- corr1catf(vb=modc$vb, levcat=catc)$corr
+        modcorrd <- matrix(as.character(round(modcorr, dec1)), ncol=ncatc)
+        modcorrd <- data.frame(cbind(catc, modcorrd), row.names=catc)
+        names(modcorrd) <- c("category",catc)
+      }
       estframe[catnr,-1] <- data.frame(modc$b[1], modc$se[1], modc$ci.lb[1], 
                                        modc$ci.ub[1], modc$pval[1])
       moduse <- (catnr+1):ncatc
@@ -141,6 +168,8 @@ mod1f <- function(frame1, covnr=5, dec1=2, centr1=0) {
       estimate=modk$b, standarderror=modk$se, lower=modk$ci.lb,
       upper=modk$ci.ub, p.value=modk$pval)
     modr <- modk
+    modcorr <- "no correlations for a continuous moderator"
+    modcorrd <- "no correlations for a continuous moderator"
   } # end computations for continuous variable
   names(msemod) <-c("within","between")
   msemodd <- as.character(round(msemod,dec1))
@@ -182,7 +211,7 @@ mod1f <- function(frame1, covnr=5, dec1=2, centr1=0) {
   estframed$p.value[estframe$p.value<.001] <- "<0.001"
   return(list(semod=msemod, semodd=msemodd, 
               estframe=estframe, estframed=estframed,
-              hetm1=hetm1d))
+              hetm1=hetm1d, corrlevel=modcorr, corrleveld=modcorrd))
 } # end function mod1f
 
 # moderator analysis, more than one categorical or continuous variable
@@ -393,6 +422,8 @@ ui <- fluidPage(
       tableOutput("modvarc"),
       h4(textOutput("modtextcoef")),
       tableOutput("modcoef"),
+      h4(textOutput("modtextcorr")),
+      tableOutput("modcorr"),
       h3(textOutput("multtext")),
       h4(textOutput("multmodtexthet")),
       h5(textOutput("multmodtexthet2")),
@@ -639,6 +670,15 @@ server <- function(input, output) {
     return(res)
   })
   
+  output$modtextcorr <- renderText({
+    req(input$fil1)
+    lasp <- input$ls
+    res <- ""
+    if (lasp=="English") res <- "Correlations (diagonal, standard errors)"
+    if (lasp=="norsk") res <- "Korrelasjoner (standardfeil langs diagonalen)"
+    return(res)
+  })
+  
   output$overall <- renderTable({
     req(input$fil1)
     lasp <- input$ls
@@ -731,6 +771,14 @@ server <- function(input, output) {
     if (lasp=="norsk") 
       names(md1e)[-1] <- c("estimat","standardfeil","nedre","øvre","p-verdi")
     return(md1e)
+  })
+  
+  output$modcorr <- renderTable({
+    req(input$fil1)
+    lasp <- input$ls
+    md1 <- mod()
+    md1c <- md1$corrleveld
+    return(md1c)
   })
   
   output$multmodp <- renderTable({
