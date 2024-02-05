@@ -21,3 +21,5 @@ June 7., 2021, detected that changes have been made in the function rma.mv in ve
 November 5., 2021. Renamed app3.r to app.r . This is the version of the app to be used for rma.mv in version >=3.0_0 of the R package metafor. Only this version of the app is maintained hereafter. In app.r only, not in app2.r, included correlations between overall effect sizes within the categories of a categorical moderator, in analysis with one categorical moderator. Correlations are based on the variance covariance matrix in the rma.mv object for this analysis.
 
 March 17., 2022. This repo also contains files related to ongoing work where three-level models are used. At present the files R file for Moderator Analysis Emotion Regulation.csv, R file for Overall Synthesis Results Emotion Regulation Metaanalysis.csv and Ung13_emoreg_share.csv are included. When the work is published, more information and links to the articles will be included.
+
+February 5., 2024. Another file Brief.csv related to ongoing work using three-level models is uploaded.
